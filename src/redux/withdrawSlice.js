@@ -9,7 +9,10 @@ import axios from "axios";
     async (withdrawalData, { rejectWithValue }) => {
       try {
         const response = await axios.post(`${API_URL}/payment/withdraw`, withdrawalData,{
-          withCredentials: true
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json'
+        }
         });
         return response.data.data;
         

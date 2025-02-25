@@ -9,7 +9,10 @@ const API_URL = import.meta.env.VITE_APP_API_URL
 export const startPayment = createAsyncThunk("payment/start", async (paymentData,{rejectWithValue}) => {
   try {
     const response = await axios.post(`${API_URL}/payment/initiate`, paymentData, {
-      withCredentials: true
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json'
+    }
     });
 
     console.log(response.data)

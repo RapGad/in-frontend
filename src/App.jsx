@@ -12,6 +12,7 @@ import Transaction from "./components/Transaction";
 import Investment from "./components/Investment";
 import Deposit from "./components/Deposit";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
 
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard/*" element={<Dashboard />}>

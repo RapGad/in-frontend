@@ -9,7 +9,10 @@ const API_URL = import.meta.env.VITE_APP_API_URL
 const getUserBalance = createAsyncThunk("user/getBalance", async (_,{rejectWithValue}) => {
     try {
         const response = await axios.get(`${API_URL}/get/user-balance`, {
-            withCredentials: true
+            withCredentials: true,    
+            headers: {
+              'Content-Type': 'application/json'
+          }
           });
           return response.data.data;
         

@@ -9,7 +9,10 @@ const purchaseInvestment = createAsyncThunk("investment/purchasingInvestment", a
 
   try {
     const response = await axios.post(`${API_URL}/investment/purchase`, data, {
-      withCredentials: true
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json'
+    }
     });
 
     console.log(response.data)

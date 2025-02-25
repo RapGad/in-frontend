@@ -7,7 +7,10 @@ const API_URL = import.meta.env.VITE_APP_API_URL
 const getTransactions = createAsyncThunk("transaction/getTransactions", async (_,{rejectWithValue}) => {
     try {
         const response = await axios.get(`${API_URL}/get/transactions`, {
-            withCredentials: true
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
 
         if(response.data.success === true) {

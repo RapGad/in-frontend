@@ -9,6 +9,7 @@ import balanceReducer from './balanceSlice';
 import transactionReducer from './transactionSlice';
 import withdrawalReducer from './withdrawSlice';
 import paymentReducer from './paymentSlice';
+import passwordResetReducer from './forgotPasswordSlice';
 
 
 const persistConfig = {
@@ -27,7 +28,8 @@ export const store = configureStore({
     balance: balanceReducer,
     transaction: transactionReducer,
     withdrawal: withdrawalReducer,
-    payment: paymentReducer
+    payment: paymentReducer,
+    passwordReset: passwordResetReducer
 
   },
   middleware: (getDefaultMiddleware) =>

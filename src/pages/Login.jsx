@@ -83,6 +83,7 @@ const Login = () => {
 
         <input type="checkbox" id="show" onChange={togglePasswordVisibility}/>
         <label htmlFor="">show password</label>
+        <NavLink to="/forgot-password">Forgot Password</NavLink>
 
 
         </div>
